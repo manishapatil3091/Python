@@ -8,7 +8,7 @@ def DirectoryCount(path):
         count = 0
 
         for Fname in os.listdir(path):
-            fullpath = os.path.join(path, item)
+            fullpath = os.path.join(path, Fname)
 
             if os.path.isfile(fullpath):
                 count = count + 1
@@ -28,7 +28,7 @@ def main():
     print("Automation Script Started...")
     path = input("Enter Directory Path : ")
 
-    schedule.every(5).minutes.do(DirectoryCount, path)
+    schedule.every(1).minutes.do(DirectoryCount, path)
 
     while True:
         schedule.run_pending()
