@@ -28,7 +28,7 @@ def main():
     print("Automation Script Started...")
     path = input("Enter Directory Path : ")
 
-    schedule.every(1).minutes.do(DirectoryCount, path)
+    schedule.every(5).minutes.do(DirectoryCount, path)
 
     while True:
         schedule.run_pending()
